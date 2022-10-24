@@ -1,0 +1,69 @@
+PROCEDURE dot_product (var ps:INTEGER, v1,v2: : ARRAY_OF INTEGER[50];)
+VAR  
+  i: INTEGER; 
+BEGIN
+ps:=0
+IF (v1.length<>v2.length) THEN  
+write ('the 2 array need to have the same length')
+ELSE    FOR i FROM 0 TO v1.length STEP 1  DO  
+    ps=ps+(v1[i]*v2[i])    
+END_FOR
+   END_IF
+END
+
+
+
+ALGORITHM Calcul
+ VAR    
+v1,v2 : ARRAY_OF INTEGER[50]; 
+ps:INTEGER;
+BEGIN
+write ('give me size v1')
+read (size v1)
+write(' give me v1')
+read (v1)
+write ('give me size v2')
+read (size v2)
+write(' give me v2')
+read (v2) 
+dot_product (sum,v1,v2)
+IF (ps=0) THEN   
+ write ('the 2 vectors are ortogonal')
+ELSE 
+ write ('the 2 vectors are not ortogonal')
+ END_IF
+END
+
+
+FUNCTION dot_product (v1,v2: : ARRAY_OF INTEGER[50];):INTEGER
+VAR    i,ps: INTEGER; 
+BEGIN
+ps:=0
+IF (v1.length<>v2.length) THEN  
+write ('the 2 array need to have the same length')  
+return (NaN)
+ELSE    
+FOR i FROM 0 TO v1.length STEP 1  DO    
+  ps=ps+(v1[i]*v2[i])  
+  END_FOR
+   END_IF
+ retun (ps)
+END
+ALGORITHM Calcul 
+VAR    v1,v2 : ARRAY_OF INTEGER[50];    ps,M:INTEGER;
+BEGIN
+write ('give me size v1')
+read (size v1)
+write(' give me v1')
+read (v1)
+write ('give me size v2')
+read (size v2)
+write(' give me v2')
+read (v2) 
+M:=product (v1,v2)
+IF (M=0) THEN   
+ write ('the 2 vectors are ortogonal')
+ELSE 
+ write ('the 2 vectors are not ortogonal')
+ END_IF
+END
